@@ -31,6 +31,23 @@
 *.out
 *.app
 
+### Output and Cache Directories ###
+/External/
+/Debug/
+/Docs/
+/Release/
+/build/
+/bin/
+/out/
+/cmake-build-*/
+
+### CMake ###
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
 
 
 ### vscode ###
