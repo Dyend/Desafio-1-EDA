@@ -5,8 +5,16 @@
 
 const int SUDOKU_SIZE  = 9;
 
+class Cuadrante{
+    public:
+
+    int inicio_fila, fin_fila;
+    int inicio_columna, fin_columna;
+};
+
 class State{
-public:
+    public:
+
     std::array <std::array <char, SUDOKU_SIZE>, SUDOKU_SIZE> sudoku;
 };
 
@@ -18,9 +26,6 @@ public:
 
 void mostrar_sudoku(State &sudoku);
 
-int is_valid(State& s){
-    return 1;
-}
 // dado un estado del sudoku añade un numero a un casillero de este.
 State transition(State &s, Action& a){
     State new_state = s;
@@ -28,12 +33,64 @@ State transition(State &s, Action& a){
     return new_state;
 }
 
+/* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma fila 
+   Retorna falso si no esta*/
+
+bool check_row(State& s, int pos_i, int pos_j){
+    for(int i = 0; i < s.sudoku.size(); i++){
+        if(s.sudoku[i][pos_j] == s.sudoku[pos_i][pos_j]){
+            return true;
+        }
+    }
+    return false;
+}
+/* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma columna 
+   Retorna falso si no esta*/
+
+bool check_column(State& s, int pos_i, int pos_j){
+    for(int i = 0; i < s.sudoku.size(); i++){
+        if(s.sudoku[pos_i][i] == s.sudoku[pos_i][pos_j]){
+            return true;
+        }
+    }
+    return false;
+}
+/* Retorna el cuadrante al cual pertenece un casillero*/
+Cuadrante get_quadrant(int pos_i, int pos_j){
+    Cuadrante resultado;
+    return resultado;
+}
+
+/* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma region 
+   Retorna falso si no esta*/
+
+bool check_region(State& s, int pos_i, int pos_j){
+    return false;
+}
+/* Esto no esta terminado*/
 std::list<Action> get_actions(State& s){
     int i, j;
     std::list<Action> actions;
-
+    for(int i = 0; i < s.sudoku.size(); i++){
+        for(int j = 0; j < s.sudoku.size(); j++){
+            // Si el casillero esta vacio intentamos poner un numero
+            if(s.sudoku[i][j] == '_'){
+                for(int numero = 1; numero < 10 ; numero ++){
+                    if(!check_region(s, i, j) && !check_row(s, i, j) && !check_column(s, i, j)){
+                        Action action;
+                        action.numero = numero;
+                        action.row = i;
+                        action.col = j;
+                        actions.push_back(action);
+                    }
+                    
+                }
+            }
+        }
+    }
     return actions;
 }
+/* Imprime el sudoku*/
 void show_sudoku(State& s){
     for(int i = 0; i < s.sudoku.size(); i++){
         for(int j = 0; j < s.sudoku.size(); j++){
