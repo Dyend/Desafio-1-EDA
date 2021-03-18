@@ -21,12 +21,13 @@ class State{
 class Action{
 public:
     // La accion se define como poner un numero en un casillero del sudoku(matriz)
-    int row, col, numero;
+    int row, col;
+    char numero;
 };
 
 
 // dado un estado del sudoku añade un numero a un casillero de este.
-State transition(State &s, Action& a){
+State transition(State& s, Action& a){
     State new_state = s;
     new_state.sudoku[a.row][a.col]=a.numero;
     return new_state;
@@ -35,7 +36,7 @@ State transition(State &s, Action& a){
 /* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma fila 
    Retorna falso si no esta*/
 
-bool check_row(State& s, int pos_i, int pos_j, int numero){
+bool check_row(State& s, int pos_i, int pos_j, char numero){
     for(int i = 0; i < s.sudoku.size(); i++){
         if(s.sudoku[i][pos_j] == numero){
             return true;
@@ -46,7 +47,7 @@ bool check_row(State& s, int pos_i, int pos_j, int numero){
 /* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma columna 
    Retorna falso si no esta*/
 
-bool check_column(State& s, int pos_i, int pos_j, int numero){
+bool check_column(State& s, int pos_i, int pos_j, char numero){
     for(int i = 0; i < s.sudoku.size(); i++){
         if(s.sudoku[pos_i][i] == numero){
             return true;
@@ -62,7 +63,7 @@ Cuadrante get_quadrant(int pos_i, int pos_j){
         cuadrante_actual.inicio_fila = 6;
         cuadrante_actual.fin_fila = 8;
     }
-    else if (pos_i>3){
+    else if (pos_i>2){
         cuadrante_actual.inicio_fila = 3;
         cuadrante_actual.fin_fila = 5;
     }
@@ -75,7 +76,7 @@ Cuadrante get_quadrant(int pos_i, int pos_j){
         cuadrante_actual.inicio_columna = 6;
         cuadrante_actual.fin_columna = 8;
     }
-    else if (pos_j>3){
+    else if (pos_j>2){
         cuadrante_actual.inicio_columna = 3;
         cuadrante_actual.fin_columna = 5;
     }
@@ -88,19 +89,19 @@ Cuadrante get_quadrant(int pos_i, int pos_j){
 
 /* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma region 
    Retorna falso si no esta*/
-bool check_region(State& s, pos_i, pos_j, int numero){
+bool check_region(State& s, int pos_i, int pos_j, char numero){
     Cuadrante cuadrante_actual = get_quadrant(pos_i,pos_j);
     for(int i=cuadrante_actual.inicio_fila; i < cuadrante_actual.fin_fila; i++){
         for(int j=cuadrante_actual.inicio_columna; j < cuadrante_actual.fin_columna; j++){
-            int numero_en_la_casilla = s[i][j];
+            char numero_en_la_casilla = s.sudoku[i][j];
             if(numero_en_la_casilla == numero){
                 return true;
             }
+        }
     }
     return false;
 }
 
-/* Esto no esta terminado*/
 std::list<Action> get_actions(State& s){
     int i, j;
     std::list<Action> actions;
@@ -111,7 +112,8 @@ std::list<Action> get_actions(State& s){
                 poner todos los numeros posibles de ese casillero siempre
                  y cuando no este repetido en la fila, columna o region */
             if(s.sudoku[i][j] == '_'){
-                for(int numero = 1; numero < 10 ; numero ++){
+                for(int n = 1; n < 10 ; n ++){
+                    char numero = '0' + n;
                     if(!check_region(s, i, j, numero) && !check_row(s, i, j, numero) && !check_column(s, i, j, numero)){
                         Action action;
                         action.numero = numero;
@@ -135,6 +137,7 @@ void show_sudoku(State& s){
         std::cout << '\n';
 
     }
+    std::cout << "----------------------------------------------------------------------------------------------" << std::endl;
 }
 
 
@@ -155,14 +158,17 @@ bool is_final(State& s){
 State solve(State& initial){
     std::stack<State> s;
     s.push(initial);
+    long long contador = 0;
     while(!s.empty()){
-    State actual = s.top(); s.pop();
-    if(is_final(actual)){
-        return actual;
-    }
-    std::list<Action> actions = get_actions(actual);
-    for( Action a : actions)
-        s.push(transition(actual, a));
+        State actual = s.top(); s.pop();
+        contador++;
+        std::cout << contador << std::endl;
+        if(is_final(actual)){
+            return actual;
+        }
+        std::list<Action> actions = get_actions(actual);
+        for( Action a : actions)
+            s.push(transition(actual, a));
     }
     return initial;
 }
