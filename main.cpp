@@ -54,18 +54,52 @@ bool check_column(State& s, int pos_i, int pos_j, int numero){
     }
     return false;
 }
+
 /* Retorna el cuadrante al cual pertenece un casillero*/
 Cuadrante get_quadrant(int pos_i, int pos_j){
-    Cuadrante resultado;
-    return resultado;
+    Cuadrante cuadrante_actual;
+    if(pos_i>5){
+        cuadrante_actual.inicio_fila = 6;
+        cuadrante_actual.fin_fila = 8;
+    }
+    else if (pos_i>3){
+        cuadrante_actual.inicio_fila = 3;
+        cuadrante_actual.fin_fila = 5;
+    }
+    else {
+        cuadrante_actual.inicio_fila = 0;
+        cuadrante_actual.fin_fila = 2;
+    }
+
+    if(pos_j>5){
+        cuadrante_actual.inicio_columna = 6;
+        cuadrante_actual.fin_columna = 8;
+    }
+    else if (pos_j>3){
+        cuadrante_actual.inicio_columna = 3;
+        cuadrante_actual.fin_columna = 5;
+    }
+    else {
+        cuadrante_actual.inicio_columna = 0;
+        cuadrante_actual.fin_columna = 2;
+    }
+    return cuadrante_actual;
 }
 
 /* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma region 
    Retorna falso si no esta*/
-
-bool check_region(State& s, int pos_i, int pos_j, int numero){
+bool check_region(State& s, pos_i, pos_j, int numero){
+    Cuadrante cuadrante_actual = get_quadrant(pos_i,pos_j);
+    for(int i=cuadrante_actual.inicio_fila; i < cuadrante_actual.fin_fila; i++){
+        for(int j=cuadrante_actual.inicio_columna; j < cuadrante_actual.fin_columna; j++){
+            int numero_en_la_casilla = s[i][j];
+            if(numero_en_la_casilla == numero){
+                return true;
+            }
+    }
     return false;
 }
+
 /* Esto no esta terminado*/
 std::list<Action> get_actions(State& s){
     int i, j;
