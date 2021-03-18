@@ -5,5 +5,5 @@
 mkdir build && cd build\
 cmake ..\
 cmake --build .\
-./sudoku_solver\
+./sudoku_solver
 
