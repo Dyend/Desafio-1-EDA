@@ -24,7 +24,6 @@ public:
     int row, col, numero;
 };
 
-void mostrar_sudoku(State &sudoku);
 
 // dado un estado del sudoku añade un numero a un casillero de este.
 State transition(State &s, Action& a){
@@ -36,9 +35,9 @@ State transition(State &s, Action& a){
 /* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma fila 
    Retorna falso si no esta*/
 
-bool check_row(State& s, int pos_i, int pos_j){
+bool check_row(State& s, int pos_i, int pos_j, int numero){
     for(int i = 0; i < s.sudoku.size(); i++){
-        if(s.sudoku[i][pos_j] == s.sudoku[pos_i][pos_j]){
+        if(s.sudoku[i][pos_j] == numero){
             return true;
         }
     }
@@ -47,9 +46,9 @@ bool check_row(State& s, int pos_i, int pos_j){
 /* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma columna 
    Retorna falso si no esta*/
 
-bool check_column(State& s, int pos_i, int pos_j){
+bool check_column(State& s, int pos_i, int pos_j, int numero){
     for(int i = 0; i < s.sudoku.size(); i++){
-        if(s.sudoku[pos_i][i] == s.sudoku[pos_i][pos_j]){
+        if(s.sudoku[pos_i][i] == numero){
             return true;
         }
     }
@@ -64,19 +63,22 @@ Cuadrante get_quadrant(int pos_i, int pos_j){
 /* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma region 
    Retorna falso si no esta*/
 
-bool check_region(State& s, int pos_i, int pos_j){
+bool check_region(State& s, int pos_i, int pos_j, int numero){
     return false;
 }
 /* Esto no esta terminado*/
 std::list<Action> get_actions(State& s){
     int i, j;
     std::list<Action> actions;
+    /* Se recorre el sudoku*/
     for(int i = 0; i < s.sudoku.size(); i++){
         for(int j = 0; j < s.sudoku.size(); j++){
-            // Si el casillero esta vacio intentamos poner un numero
+            /* Si el casillero esta vacio intentamos
+                poner todos los numeros posibles de ese casillero siempre
+                 y cuando no este repetido en la fila, columna o region */
             if(s.sudoku[i][j] == '_'){
                 for(int numero = 1; numero < 10 ; numero ++){
-                    if(!check_region(s, i, j) && !check_row(s, i, j) && !check_column(s, i, j)){
+                    if(!check_region(s, i, j, numero) && !check_row(s, i, j, numero) && !check_column(s, i, j, numero)){
                         Action action;
                         action.numero = numero;
                         action.row = i;
