@@ -4,6 +4,7 @@
 #include <stack>
 #include <queue>
 #include <math.h>
+#include "sudokumaker.cpp"
 
 const int SUDOKU_SIZE  = 9;
 
@@ -308,10 +309,12 @@ std::array<std::array<char, SUDOKU_SIZE>, SUDOKU_SIZE> get_data(){
 
 
 int main() {
-    
-    State initial; initial.sudoku = get_data(); 
+
+    State initial; initial.sudoku = sudoku_maker(); 
+    show_sudoku(initial);
     initial.priority = 0;
     State resultado = solve(initial); //busqueda de soluciones
     show_sudoku(resultado);
     return 0;
+    
 }
