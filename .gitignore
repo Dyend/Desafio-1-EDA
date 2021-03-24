@@ -49,5 +49,6 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 
-
+# files
+/files/sudoku.txt
 
