@@ -2,14 +2,13 @@
 #include <array>
 #include <string>
 #include <fstream>
+#include "sudoku.h"
 
-const int SUDOKU_SIZE2 = 9;
-
-std::array<std::array<char, SUDOKU_SIZE2>, SUDOKU_SIZE2> init_sudoku(){
-  std::array<std::array<char, SUDOKU_SIZE2>, SUDOKU_SIZE2> SUDOKU;
-  for (int i = 0; i < SUDOKU_SIZE2; i++){
-    std::array<char, SUDOKU_SIZE2> fila;
-    for(int j = 0; j < SUDOKU_SIZE2; j++){
+std::array<std::array<char, SUDOKU_SIZE>, SUDOKU_SIZE> init_sudoku(){
+  std::array<std::array<char, SUDOKU_SIZE>, SUDOKU_SIZE> SUDOKU;
+  for (int i = 0; i < SUDOKU_SIZE; i++){
+    std::array<char, SUDOKU_SIZE> fila;
+    for(int j = 0; j < SUDOKU_SIZE; j++){
       fila[j] = '_';
     }
     SUDOKU[i] = fila;
@@ -17,18 +16,18 @@ std::array<std::array<char, SUDOKU_SIZE2>, SUDOKU_SIZE2> init_sudoku(){
   return SUDOKU;
 }
 
-std::array<std::array<char, SUDOKU_SIZE2>, SUDOKU_SIZE2> sudoku_maker()
+std::array<std::array<char, SUDOKU_SIZE>, SUDOKU_SIZE> sudoku_maker()
 {
-  std::array<std::array<char, SUDOKU_SIZE2>, SUDOKU_SIZE2> SUDOKU = init_sudoku();
-  std::array<char, SUDOKU_SIZE2> fila;
+  std::array<std::array<char, SUDOKU_SIZE>, SUDOKU_SIZE> SUDOKU = init_sudoku();
+  std::array<char, SUDOKU_SIZE> fila;
   std::fstream myfile;
   std::string line, value, index;
   int x, y;
   int startdelimiter = 0, stopdelimiter = 0;
   int novena_casilla = 0;
   int index_inicial=-1, index_actual=0;
-  int size = SUDOKU_SIZE2;
-  myfile.open("sudoku.txt");
+  int size = SUDOKU_SIZE;
+  myfile.open("files/sudoku.txt");
   if (myfile.is_open()){
     while (std::getline(myfile,line)){
       if (line.find("solution") != std::string::npos){

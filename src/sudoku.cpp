@@ -1,36 +1,8 @@
-#include <iostream>
 #include <array>
-#include <list>
-#include <stack>
+#include <iostream>
 #include <queue>
+#include "sudoku.h"
 #include <math.h>
-#include "sudokumaker.cpp"
-
-const int SUDOKU_SIZE  = 9;
-
-class Cuadrante{
-    public:
-
-    int inicio_fila, fin_fila;
-    int inicio_columna, fin_columna;
-};
-
-class State{
-    public:
-
-    std::array <std::array <char, SUDOKU_SIZE>, SUDOKU_SIZE> sudoku;
-    int priority;
-
-};
-
-class Action{
-public:
-    // La accion se define como poner un numero en un casillero del sudoku(matriz)
-    int row, col;
-    char numero;
-    int priority;
-
-};
 
 /* Imprime el sudoku*/
 void show_sudoku(State& s){
@@ -51,7 +23,7 @@ bool operator<(const State& s1, const State& s2)
     /* Compara la prioridad de 2 state
         la cual fue calculada considerando entre menos casilleros disponibles en la fila,
             columna y region da mayor prioridad */
-    return s1.priority < s2.priority;
+    return s1.priority > s2.priority;
 
 }
 
@@ -208,45 +180,7 @@ bool check_region(State& s, int pos_i, int pos_j, char numero){
     return false;
 }
 
-std::priority_queue<Action> get_actions(State& s){
-    int i, j;
-    /* Cola de prioridad que contiene una cola de prioridad por cada casillero vacio del sudoku,
-        la prioridad la tiene el que tenga menos posibilidades por casillero */
-    std::priority_queue<Action> actions;
-    /* Se recorre el sudoku*/
-    for(int i = 0; i < s.sudoku.size(); i++){
-        for(int j = 0; j < s.sudoku.size(); j++){
-            /* Si el casillero esta vacio intentamos
-                poner todos los numeros posibles de ese casillero siempre
-                 y cuando no este repetido en la fila, columna o region */
-            if(s.sudoku[i][j] == '_'){
-                int contador = 0;
-                int prioridad;
-                // sub cola de prioridad que contiene los numeros posibles para un casillero
-                for(int n = 1; n < 10 ; n ++){
-                    // int to char
-                    char numero = '0' + n;
-                    if(!is_valid_state(s, i, j , numero, prioridad)){
-                        Action action;
-                        action.numero = numero;
-                        action.row = i;
-                        action.col = j;
-                        action.priority = prioridad;
-                        actions.push(action);
-                        contador++;
-                    }
-                    
-                }
-                if(contador == 0){
-                    std::priority_queue<Action> empty;
-                    return empty;
-                }
 
-            }
-        }
-    }
-    return actions;
-}
 
 
 // revisa que no quede ningun casillero en blanco ( en 0 ) del sudoku
@@ -261,60 +195,4 @@ bool is_final(State& s){
     }
 
     return true;
-}
-
-State solve(State& initial){
-    std::stack<State> s;
-    s.push(initial);
-    long long contador = -1;
-    while(!s.empty()){
-        State actual = s.top(); s.pop();
-        //show_sudoku(actual);
-        contador++;
-        std::cout << contador << std::endl;
-        if(is_final(actual)){
-            std::cout << contador << std::endl;
-            return actual;
-        }
-        std::priority_queue<Action> pq_actions = get_actions(actual);
-        // iterando sobre la cola de prioridad de cola de prioridades de acciones
-        
-        while(!pq_actions.empty()){
-            Action a = pq_actions.top(); pq_actions.pop();
-            s.push(transition(actual, a));
-
-        }
-
-        
-    }
-    return initial;
-}
-
-
-std::array<std::array<char, SUDOKU_SIZE>, SUDOKU_SIZE> get_data(){
-    // por conveniencia harcodiamos el sudoku para evitar leerlo desde un archivo por ahora
-    /* _ representa un casillero vacio*/
-    std::array<std::array<char, SUDOKU_SIZE>, SUDOKU_SIZE> initial = {{
-        {'_', '3', '5' , '_', '_', '7', '2', '_', '4'},
-        {'9', '_', '_', '_', '_', '8', '3', '_', '_'},
-        {'4', '8', '6', '3', '_', '2', '5', '7', '_'},
-        {'6', '_', '3', '8', '_',  '_', '9', '2', '5',},
-        {'7', '_', '_', '_', '_', '_', '_', '3', '_',},
-        {'8', '_', '2', '5', '4', '3', '_', '6', '7',},
-        {'3', '_', '_', '6', '_', '_', '_', '5', '2',},
-        {'2', '6', '_', '_', '3', '5', '_', '_',  '_',},
-        {'_', '7', '_', '_', '_', '_', '_', '4', '_',}}};
-    return initial;
-}
-
-
-int main() {
-
-    State initial; initial.sudoku = sudoku_maker(); 
-    show_sudoku(initial);
-    initial.priority = 0;
-    State resultado = solve(initial); //busqueda de soluciones
-    show_sudoku(resultado);
-    return 0;
-    
 }
