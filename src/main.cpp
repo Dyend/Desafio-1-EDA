@@ -35,8 +35,8 @@ int main() {
     auto start = std::chrono::steady_clock::now();
     if(opcion == 1)
         resultado = dfs(initial);
-    //else if(opcion == 2)
-        //resultado = bfs(initial);
+    else if(opcion == 2)
+        resultado = bfs(initial);
     auto end = std::chrono::steady_clock::now();
     auto diff = end - start;
     show_sudoku(resultado);

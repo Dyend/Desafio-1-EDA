@@ -1,6 +1,6 @@
 #include <array>
 #include <queue>
-
+#include <list>
 #ifndef SUDOKU_H
 #define SUDOKU_H
 
@@ -17,8 +17,8 @@ class State{
     public:
 
     std::array <std::array <char, SUDOKU_SIZE>, SUDOKU_SIZE> sudoku;
-    int priority;
-
+    long long priority;
+    long long id;
 };
 
 class Action{
@@ -26,7 +26,9 @@ public:
     // La accion se define como poner un numero en un casillero del sudoku(matriz)
     int row, col;
     char numero;
-    int priority;
+    // casilleros vacios columna, casilleros vacios fila, casilleros vacios region 
+    int cvc, cvf, cvr;
+    long long id;
 
 };
 
@@ -40,9 +42,11 @@ void show_sudoku(State& s);
 
 Cuadrante get_quadrant(int pos_i, int pos_j);
 
-State transition(State& s, Action& a);
+State transition(State& s, Action& a, long long& priority);
 
-bool is_valid_state(State& s, int pos_i, int pos_j, char numero, int& prioridad);
+bool is_valid_state(State& s, int pos_i, int pos_j, char numero, int& cvf, int& cvc, int& cvr);
+
+std::list<Action> get_actions(State& s);
 
 bool check_row(State& s, int pos_i, int pos_j, char numero);
 

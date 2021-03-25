@@ -1,6 +1,7 @@
 #include <array>
 #include <iostream>
 #include <queue>
+#include <list>
 #include "sudoku.h"
 #include <math.h>
 
@@ -23,36 +24,7 @@ bool operator<(const State& s1, const State& s2)
     /* Compara la prioridad de 2 state
         la cual fue calculada considerando entre menos casilleros disponibles en la fila,
             columna y region da mayor prioridad */
-    return s1.priority > s2.priority;
-
-}
-
-// Re definicion de la comparacion de 2 Actions
-bool operator<(const Action& a1, const Action& a2)
-{
-    /* Compara la prioridad de 2 actions
-        la cual fue calculada considerando entre menos casilleros disponibles en la fila,
-            columna y region da mayor prioridad */
-    return a1.priority > a2.priority;
-
-}
-
-
-// Re definicion de la comparacion de 2 priority queue con priority queue dentro
-bool operator<(const std::priority_queue<Action>& q1, const std::priority_queue<Action>& q2)
-{
-    // mientras menos elementos tenga tiene mayor prioridad ( osea si tiene menos numeros es mejor)
-    int p1;
-    int p2;
-    if(q1.size() > 0)
-        p1 = q1.size()*q1.top().priority;
-    else
-        p1 = q1.size();
-    if(q2.size() > 0)
-        p2 = q2.top().priority * q2.size();
-    else
-        p2 = q2.size();
-    return p1 < p2;
+    return s1.priority < s2.priority;
 
 }
 
@@ -90,22 +62,40 @@ Cuadrante get_quadrant(int pos_i, int pos_j){
 }
 
 // dado un estado del sudoku añade un numero a un casillero de este.
-State transition(State& s, Action& a){
+State transition(State& s, Action& a, long long& priority){
     State new_state = s;
     new_state.sudoku[a.row][a.col]=a.numero;
-    new_state.priority = a.priority;
+    new_state.id = a.id;
+    new_state.priority = priority;
     return new_state;
 }
 
+long long identificador_casillero(State& s, char& casillero, int& pos_i, int& pos_j){
+    long long identificador;
+    int casillero_int;
+    if(casillero != '_'){
+        casillero_int = casillero - '0';
+        // char to int 
+        identificador =  (casillero_int + 1) * pow(10, pos_i) * (pos_j + 1);
+    }else{
+        identificador = pow(10, pos_i) * (pos_j + 1);
+    }
+    return identificador;
+}
+
 /* Engloba las 3 reglas check column, check row, check region */
-bool is_valid_state(State& s, int pos_i, int pos_j, char numero, int& prioridad){
+bool is_valid_state(State& s, int pos_i, int pos_j, char numero, int& cvf, int& cvc, int& cvr, long long& id){
     Cuadrante cuadrante_actual = get_quadrant(pos_i, pos_j);
     int casilleros_vacios_columna = 0, casilleros_vacios_fila = 0, casilleros_vacios_region = 0;
-
+    
     for(int i = 0; i < s.sudoku.size(); i++){
 
         for(int j = 0; j < s.sudoku.size(); j++){
-            
+            if(i == pos_i && j == pos_j)
+                id += identificador_casillero(s, numero, i , j);
+            else
+                id += identificador_casillero(s, s.sudoku[i][j], i , j);
+
             // Check row rule (misma fila distinta columna)
             if(i == pos_i){
                 if(s.sudoku[i][j] == numero){
@@ -135,54 +125,57 @@ bool is_valid_state(State& s, int pos_i, int pos_j, char numero, int& prioridad)
 
         }
     }
-    // Se usa la medida donde menos casilleros disponible tenga fila, columna, region
-    prioridad = pow(10, ( 9- casilleros_vacios_fila)) + pow(10, ( 9- casilleros_vacios_region)) + pow(10, ( 9- casilleros_vacios_columna));
+    
+    cvc = casilleros_vacios_columna;
+    cvf = casilleros_vacios_fila;
+    cvr = casilleros_vacios_region;
+
+    
 
     return false;
 }
 
-/* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma fila 
-   Retorna falso si no esta*/
 
-bool check_row(State& s, int pos_i, int pos_j, char numero){
+std::list<Action> get_actions(State& s){
+    int i, j;
+    std::list<Action> actions;
+    /* Se recorre el sudoku*/
     for(int i = 0; i < s.sudoku.size(); i++){
-        if(s.sudoku[i][pos_j] == numero){
-            return true;
-        }
-    }
-    return false;
-}
-/* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma columna 
-   Retorna falso si no esta*/
+        for(int j = 0; j < s.sudoku.size(); j++){
+            /* Si el casillero esta vacio intentamos
+                poner todos los numeros posibles de ese casillero siempre
+                 y cuando no este repetido en la fila, columna owa region */
+            if(s.sudoku[i][j] == '_'){
+                int contador = 0;
+                int cvf, cvc, cvr;
+                long long id = 0;
+                for(int n = 1; n < 10 ; n ++){
+                    // int to char
+                    char numero = '0' + n;
+                    if(!is_valid_state(s, i, j , numero, cvf, cvc, cvr, id)){
+                        Action action;
+                        action.numero = numero;
+                        action.row = i;
+                        action.col = j;
+                        action.cvc = cvc;
+                        action.cvf = cvf;
+                        action.cvr = cvr;
+                        action.id = id;
+                        actions.push_back(action);
+                        contador++;
+                    }
+                    
+                }
+                if(contador == 0){
+                    std::list<Action> empty;
+                    return empty;
+                }
 
-bool check_column(State& s, int pos_i, int pos_j, char numero){
-    for(int i = 0; i < s.sudoku.size(); i++){
-        if(s.sudoku[pos_i][i] == numero){
-            return true;
-        }
-    }
-    return false;
-}
-
-
-/* Revisa si el numero en el casillero [pos_i][pos_j] está en la misma region 
-   Retorna falso si no esta*/
-bool check_region(State& s, int pos_i, int pos_j, char numero){
-    Cuadrante cuadrante_actual = get_quadrant(pos_i,pos_j);
-    for(int i=cuadrante_actual.inicio_fila; i < cuadrante_actual.fin_fila; i++){
-        for(int j=cuadrante_actual.inicio_columna; j < cuadrante_actual.fin_columna; j++){
-            char numero_en_la_casilla = s.sudoku[i][j];
-            if(numero_en_la_casilla == numero){
-                return true;
             }
         }
     }
-    return false;
+    return actions;
 }
-
-
-
-
 // revisa que no quede ningun casillero en blanco ( en 0 ) del sudoku
 bool is_final(State& s){
 

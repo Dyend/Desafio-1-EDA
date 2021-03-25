@@ -1,135 +1,141 @@
 <sudoku>
-	<number>3701</number>
+	<number>1841</number>
 	<level>60</level>
 	<field>
+		<index>2</index>
+		<value>6</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
 		<index>3</index>
-		<value>5</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>4</index>
-		<value>3</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>10</index>
-		<value>4</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>11</index>
-		<value>5</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>12</index>
-		<value>7</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>13</index>
-		<value>2</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>15</index>
 		<value>8</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
-		<index>17</index>
+		<index>4</index>
+		<value>5</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>9</index>
+		<value>4</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>10</index>
+		<value>2</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>12</index>
+		<value>3</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>13</index>
 		<value>6</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>18</index>
-		<value>3</value>
+		<value>5</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
-		<index>20</index>
-		<value>6</value>
+		<index>21</index>
+		<value>7</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>22</index>
-		<value>8</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>23</index>
-		<value>4</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>25</index>
-		<value>5</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>27</index>
-		<value>4</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>29</index>
-		<value>3</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>30</index>
-		<value>8</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>32</index>
-		<value>5</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>34</index>
-		<value>6</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>35</index>
 		<value>2</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
+		<index>23</index>
+		<value>9</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>29</index>
+		<value>4</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>30</index>
+		<value>6</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>31</index>
+		<value>3</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>33</index>
+		<value>9</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>34</index>
+		<value>7</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
 		<index>36</index>
-		<value>5</value>
+		<value>7</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>37</index>
+		<value>9</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>38</index>
+		<value>5</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>40</index>
+		<value>4</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>41</index>
 		<value>8</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
-		<index>43</index>
-		<value>4</value>
+		<index>42</index>
+		<value>6</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>44</index>
+		<value>3</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
@@ -140,68 +146,74 @@
 		<user>0</user>
 	</field>
 	<field>
+		<index>46</index>
+		<value>3</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
 		<index>47</index>
+		<value>8</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>48</index>
+		<value>9</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>49</index>
+		<value>7</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>50</index>
 		<value>2</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>51</index>
-		<value>5</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>52</index>
-		<value>8</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>53</index>
-		<value>7</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>55</index>
-		<value>3</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>56</index>
-		<value>9</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>57</index>
 		<value>4</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
+		<index>52</index>
+		<value>5</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>53</index>
+		<value>1</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>56</index>
+		<value>7</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
 		<index>58</index>
-		<value>6</value>
+		<value>1</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>59</index>
-		<value>8</value>
+		<value>3</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
-		<index>60</index>
-		<value>2</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>62</index>
-		<value>5</value>
+		<index>61</index>
+		<value>4</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
@@ -213,120 +225,108 @@
 	</field>
 	<field>
 		<index>64</index>
-		<value>6</value>
+		<value>5</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
-		<index>65</index>
+		<index>67</index>
 		<value>8</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
-		<index>68</index>
+		<index>69</index>
 		<value>7</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
-		<index>71</index>
+		<index>70</index>
 		<value>3</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>72</index>
-		<value>2</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>73</index>
-		<value>5</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>74</index>
-		<value>4</value>
+		<value>8</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>75</index>
-		<value>3</value>
+		<value>5</value>
+		<option>0</option>
+		<user>0</user>
+	</field>
+	<field>
+		<index>77</index>
+		<value>7</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 	<field>
 		<index>78</index>
-		<value>6</value>
-		<option>0</option>
-		<user>0</user>
-	</field>
-	<field>
-		<index>79</index>
-		<value>7</value>
+		<value>2</value>
 		<option>0</option>
 		<user>0</user>
 	</field>
 </sudoku><solution>
 	<field>
 		<index>0</index>
-		<value>8</value>
-	</field>
-	<field>
-		<index>1</index>
-		<value>1</value>
-	</field>
-	<field>
-		<index>2</index>
-		<value>7</value>
-	</field>
-	<field>
-		<index>3</index>
-		<value>5</value>
-	</field>
-	<field>
-		<index>4</index>
 		<value>3</value>
 	</field>
 	<field>
-		<index>5</index>
-		<value>6</value>
-	</field>
-	<field>
-		<index>6</index>
-		<value>9</value>
-	</field>
-	<field>
-		<index>7</index>
-		<value>2</value>
-	</field>
-	<field>
-		<index>8</index>
-		<value>4</value>
-	</field>
-	<field>
-		<index>9</index>
-		<value>9</value>
-	</field>
-	<field>
-		<index>10</index>
-		<value>4</value>
-	</field>
-	<field>
-		<index>11</index>
-		<value>5</value>
-	</field>
-	<field>
-		<index>12</index>
+		<index>1</index>
 		<value>7</value>
 	</field>
 	<field>
-		<index>13</index>
+		<index>2</index>
+		<value>6</value>
+	</field>
+	<field>
+		<index>3</index>
+		<value>8</value>
+	</field>
+	<field>
+		<index>4</index>
+		<value>5</value>
+	</field>
+	<field>
+		<index>5</index>
+		<value>4</value>
+	</field>
+	<field>
+		<index>6</index>
+		<value>1</value>
+	</field>
+	<field>
+		<index>7</index>
+		<value>9</value>
+	</field>
+	<field>
+		<index>8</index>
 		<value>2</value>
+	</field>
+	<field>
+		<index>9</index>
+		<value>4</value>
+	</field>
+	<field>
+		<index>10</index>
+		<value>2</value>
+	</field>
+	<field>
+		<index>11</index>
+		<value>9</value>
+	</field>
+	<field>
+		<index>12</index>
+		<value>3</value>
+	</field>
+	<field>
+		<index>13</index>
+		<value>6</value>
 	</field>
 	<field>
 		<index>14</index>
@@ -334,71 +334,71 @@
 	</field>
 	<field>
 		<index>15</index>
-		<value>8</value>
-	</field>
-	<field>
-		<index>16</index>
-		<value>3</value>
-	</field>
-	<field>
-		<index>17</index>
-		<value>6</value>
-	</field>
-	<field>
-		<index>18</index>
-		<value>3</value>
-	</field>
-	<field>
-		<index>19</index>
-		<value>2</value>
-	</field>
-	<field>
-		<index>20</index>
-		<value>6</value>
-	</field>
-	<field>
-		<index>21</index>
-		<value>9</value>
-	</field>
-	<field>
-		<index>22</index>
-		<value>8</value>
-	</field>
-	<field>
-		<index>23</index>
-		<value>4</value>
-	</field>
-	<field>
-		<index>24</index>
-		<value>7</value>
-	</field>
-	<field>
-		<index>25</index>
 		<value>5</value>
 	</field>
 	<field>
-		<index>26</index>
-		<value>1</value>
-	</field>
-	<field>
-		<index>27</index>
-		<value>4</value>
-	</field>
-	<field>
-		<index>28</index>
-		<value>7</value>
-	</field>
-	<field>
-		<index>29</index>
-		<value>3</value>
-	</field>
-	<field>
-		<index>30</index>
+		<index>16</index>
 		<value>8</value>
 	</field>
 	<field>
-		<index>31</index>
+		<index>17</index>
+		<value>7</value>
+	</field>
+	<field>
+		<index>18</index>
+		<value>5</value>
+	</field>
+	<field>
+		<index>19</index>
+		<value>8</value>
+	</field>
+	<field>
+		<index>20</index>
+		<value>1</value>
+	</field>
+	<field>
+		<index>21</index>
+		<value>7</value>
+	</field>
+	<field>
+		<index>22</index>
+		<value>2</value>
+	</field>
+	<field>
+		<index>23</index>
 		<value>9</value>
+	</field>
+	<field>
+		<index>24</index>
+		<value>3</value>
+	</field>
+	<field>
+		<index>25</index>
+		<value>6</value>
+	</field>
+	<field>
+		<index>26</index>
+		<value>4</value>
+	</field>
+	<field>
+		<index>27</index>
+		<value>2</value>
+	</field>
+	<field>
+		<index>28</index>
+		<value>1</value>
+	</field>
+	<field>
+		<index>29</index>
+		<value>4</value>
+	</field>
+	<field>
+		<index>30</index>
+		<value>6</value>
+	</field>
+	<field>
+		<index>31</index>
+		<value>3</value>
 	</field>
 	<field>
 		<index>32</index>
@@ -406,51 +406,51 @@
 	</field>
 	<field>
 		<index>33</index>
-		<value>1</value>
+		<value>9</value>
 	</field>
 	<field>
 		<index>34</index>
-		<value>6</value>
-	</field>
-	<field>
-		<index>35</index>
-		<value>2</value>
-	</field>
-	<field>
-		<index>36</index>
-		<value>5</value>
-	</field>
-	<field>
-		<index>37</index>
-		<value>8</value>
-	</field>
-	<field>
-		<index>38</index>
-		<value>1</value>
-	</field>
-	<field>
-		<index>39</index>
-		<value>6</value>
-	</field>
-	<field>
-		<index>40</index>
 		<value>7</value>
 	</field>
 	<field>
-		<index>41</index>
-		<value>2</value>
+		<index>35</index>
+		<value>8</value>
 	</field>
 	<field>
-		<index>42</index>
-		<value>3</value>
+		<index>36</index>
+		<value>7</value>
 	</field>
 	<field>
-		<index>43</index>
+		<index>37</index>
+		<value>9</value>
+	</field>
+	<field>
+		<index>38</index>
+		<value>5</value>
+	</field>
+	<field>
+		<index>39</index>
+		<value>1</value>
+	</field>
+	<field>
+		<index>40</index>
 		<value>4</value>
 	</field>
 	<field>
+		<index>41</index>
+		<value>8</value>
+	</field>
+	<field>
+		<index>42</index>
+		<value>6</value>
+	</field>
+	<field>
+		<index>43</index>
+		<value>2</value>
+	</field>
+	<field>
 		<index>44</index>
-		<value>9</value>
+		<value>3</value>
 	</field>
 	<field>
 		<index>45</index>
@@ -458,67 +458,67 @@
 	</field>
 	<field>
 		<index>46</index>
-		<value>9</value>
+		<value>3</value>
 	</field>
 	<field>
 		<index>47</index>
-		<value>2</value>
+		<value>8</value>
 	</field>
 	<field>
 		<index>48</index>
-		<value>1</value>
-	</field>
-	<field>
-		<index>49</index>
-		<value>4</value>
-	</field>
-	<field>
-		<index>50</index>
-		<value>3</value>
-	</field>
-	<field>
-		<index>51</index>
-		<value>5</value>
-	</field>
-	<field>
-		<index>52</index>
-		<value>8</value>
-	</field>
-	<field>
-		<index>53</index>
-		<value>7</value>
-	</field>
-	<field>
-		<index>54</index>
-		<value>7</value>
-	</field>
-	<field>
-		<index>55</index>
-		<value>3</value>
-	</field>
-	<field>
-		<index>56</index>
 		<value>9</value>
 	</field>
 	<field>
-		<index>57</index>
-		<value>4</value>
+		<index>49</index>
+		<value>7</value>
 	</field>
 	<field>
-		<index>58</index>
-		<value>6</value>
-	</field>
-	<field>
-		<index>59</index>
-		<value>8</value>
-	</field>
-	<field>
-		<index>60</index>
+		<index>50</index>
 		<value>2</value>
 	</field>
 	<field>
-		<index>61</index>
+		<index>51</index>
+		<value>4</value>
+	</field>
+	<field>
+		<index>52</index>
+		<value>5</value>
+	</field>
+	<field>
+		<index>53</index>
 		<value>1</value>
+	</field>
+	<field>
+		<index>54</index>
+		<value>9</value>
+	</field>
+	<field>
+		<index>55</index>
+		<value>6</value>
+	</field>
+	<field>
+		<index>56</index>
+		<value>7</value>
+	</field>
+	<field>
+		<index>57</index>
+		<value>2</value>
+	</field>
+	<field>
+		<index>58</index>
+		<value>1</value>
+	</field>
+	<field>
+		<index>59</index>
+		<value>3</value>
+	</field>
+	<field>
+		<index>60</index>
+		<value>8</value>
+	</field>
+	<field>
+		<index>61</index>
+		<value>4</value>
 	</field>
 	<field>
 		<index>62</index>
@@ -530,70 +530,70 @@
 	</field>
 	<field>
 		<index>64</index>
-		<value>6</value>
+		<value>5</value>
 	</field>
 	<field>
 		<index>65</index>
-		<value>8</value>
+		<value>2</value>
 	</field>
 	<field>
 		<index>66</index>
-		<value>2</value>
+		<value>4</value>
 	</field>
 	<field>
 		<index>67</index>
-		<value>5</value>
+		<value>8</value>
 	</field>
 	<field>
 		<index>68</index>
-		<value>7</value>
-	</field>
-	<field>
-		<index>69</index>
-		<value>4</value>
-	</field>
-	<field>
-		<index>70</index>
-		<value>9</value>
-	</field>
-	<field>
-		<index>71</index>
-		<value>3</value>
-	</field>
-	<field>
-		<index>72</index>
-		<value>2</value>
-	</field>
-	<field>
-		<index>73</index>
-		<value>5</value>
-	</field>
-	<field>
-		<index>74</index>
-		<value>4</value>
-	</field>
-	<field>
-		<index>75</index>
-		<value>3</value>
-	</field>
-	<field>
-		<index>76</index>
-		<value>1</value>
-	</field>
-	<field>
-		<index>77</index>
-		<value>9</value>
-	</field>
-	<field>
-		<index>78</index>
 		<value>6</value>
 	</field>
 	<field>
-		<index>79</index>
+		<index>69</index>
 		<value>7</value>
 	</field>
 	<field>
-		<index>80</index>
+		<index>70</index>
+		<value>3</value>
+	</field>
+	<field>
+		<index>71</index>
+		<value>9</value>
+	</field>
+	<field>
+		<index>72</index>
 		<value>8</value>
+	</field>
+	<field>
+		<index>73</index>
+		<value>4</value>
+	</field>
+	<field>
+		<index>74</index>
+		<value>3</value>
+	</field>
+	<field>
+		<index>75</index>
+		<value>5</value>
+	</field>
+	<field>
+		<index>76</index>
+		<value>9</value>
+	</field>
+	<field>
+		<index>77</index>
+		<value>7</value>
+	</field>
+	<field>
+		<index>78</index>
+		<value>2</value>
+	</field>
+	<field>
+		<index>79</index>
+		<value>1</value>
+	</field>
+	<field>
+		<index>80</index>
+		<value>6</value>
 	</field>
 </solution>
