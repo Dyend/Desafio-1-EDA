@@ -11,7 +11,9 @@ Para windows con vscode:
 
 # Descripción-del-Problema
 
-El problema seleccionado por nuestro grupo correponde al Sudoku, cuyo objetivo es rellenar una cuadrícula de 9 × 9 celdas (81 casillas) dividida en subcuadrículas de 3 × 3 (también llamadas "cajas" o "regiones") con las cifras del 1 al 9 partiendo de algunos números ya dispuestos en algunas de las celdas. Lo importante es que no se debe repetir ningún número, del 1 al 9, en ninguna fila, columna o subsecciones de 3x3 dentro de la matriz de 9 x 9.
+El problema seleccionado por nuestro grupo correponde al Sudoku, cuyo objetivo es rellenar una cuadrícula de 9 × 9 celdas (81 casillas) dividida en subcuadrículas de 3 × 3 (también llamadas "cajas" o "regiones") con las cifras del 1 al 9 partiendo de algunos números ya dispuestos en algunas de las celdas. Lo importante es que no se debe repetir ningún número, del 1 al 9, en ninguna fila, columna o subsecciones de 3x3 dentro de la matriz de 9 x 9. Se considera resuelto cuando se encuentran las 81 casillas con algun numero del 1 al 9 y que se cumplan las condiciones palnteadas al comienzo (numeros del 1 al 9 sin repetirse tanto, en columnas, filas y casilleros de 3x3)
+
+# Solución al problema
 
 Para abarcar este problema decidimos utilizar el "Depth First Search", con una pequeña modificación (ordenar por prioridad) y el Best First Search, los cuales serán puestos a prueba y se verá que tan eficientes pueden ser a la hora de intentar resolver un sudoku, en diferentes niveles de dificultad.
 
@@ -26,9 +28,6 @@ Para abarcar este problema decidimos utilizar el "Depth First Search", con una p
 |Contribución             | Aporta buenas ideas para lograr la solución del problema                 | Aporta buenas ideas para lograr la solución del problema                 |  Aporta buenas ideas para lograr la solución del problema               | Aporta buenas ideas para lograr la solución del problema              |
 |Resolución de conflictos | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos                 | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos                 | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos                | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos              |
 
-# Usage
-- Create build folder
-- Select a sodoku from https://www.sudoku-online.org/
-- Press save game and copy it
-- Paste it on files/sudoku.txt
-- build and run
+
+- Seleccionar sodoku desde: https://www.sudoku-online.org/
+- Link al video: https://drive.google.com/file/d/1ZEuAsBY0VOLxk_di_aFcyyZlnIvOiAgk/view?usp=sharing
