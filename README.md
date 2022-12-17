@@ -22,18 +22,5 @@ Es decir, en el algoritmo DFS siempre ira en profundidad por el estado hijo mas 
 
 Por otro lado, para el algoritmo BFS se ocupa la estructura de datos "priority queue", la cual se va reordenando y recorriendo con el estado con mas prioridad. Esta prioridad es similar a la ocupada en el DFS, solamente que aquí se acumula considerando la prioridad del estado padre y en vez de ir por profundidad, salta siempre al estado que tenga mayor prioridad. Siempre que se considere un estado, se generan los hijos con prioridad y son ingresados a la Priority Queue.
 
-
-# Coevaluación
-
-|Criterio                 | Jose Luis Alonso | Juan Pablo Raab | Jonathan Reyes | Diego Acosta |
-|-------------------------|------------------|-----------------|----------------|--------------|
-|Asistencia y puntualidad |Asiste con puntualidad a todas las reuniones                  |Asiste con puntualidad a todas las reuniones                  |Asiste con puntualidad a todas las reuniones                 |Asiste con puntualidad a todas las reuniones               |
-|Integración              |Se integra bien en el grupo, buena comunicación                  |Se integra bien en el grupo, buena comunicación                  |Se integra bien en el grupo, buena comunicación                 | Se integra bien en el grupo, buena comunicación              |Se integra bien en el grupo, buena comunicación 
-|Responsabilidad          | Cumple con todas las tareas que se le asignan                 | Cumple con todas las tareas que se le asignan                  | Cumple con todas las tareas que se le asignan                 | Cumple con todas las tareas que se le asignan               |
-|Contribución             | Aporta buenas ideas para lograr la solución del problema                 | Aporta buenas ideas para lograr la solución del problema                 |  Aporta buenas ideas para lograr la solución del problema               | Aporta buenas ideas para lograr la solución del problema              |
-|Resolución de conflictos | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos                 | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos                 | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos                | Acepta ideas de otros y a la vez aporta las propias. 0 conflictos          |
-|Aspectos postivos        |Demuestra entusiasmo y aporta buenas ideas     | Encuentra errores poco evidentes y aporta soluciones a estos      | se integra con facilidad al grupo      | Posee un amplio conocimiento de las herramientas utilizadas durante el trabajo, las cuales comparte con el grupo        |
-|Aspectos a mejorar        | Avanza demasiado rápido, debe intentar esperar al grupo | Debe familiarizarse con las herramientas de programación, a veces pierde un poco de tiempo en la instalación de estas.     | Debe intentar acoplarse al grupo de trabajo en un comienzo, no al final | Debe aportar mas codificando en una próxima entrega, no solo aportar con ideas y solucionar problemas |
-
 - Seleccionar sodoku desde: https://www.sudoku-online.org/
-- Link al video: https://drive.google.com/file/d/1ZEuAsBY0VOLxk_di_aFcyyZlnIvOiAgk/view?usp=sharing
+
